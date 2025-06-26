@@ -2306,7 +2306,7 @@ Bracket.Elements = {
 
 		if not Bracket.IsLocal then sethiddenproperty(ScreenAsset, "OnTopOfCoreBlur", true) end
 		ScreenAsset.Name = "Bracket " .. game:GetService("HttpService"):GenerateGUID(false)
-		ScreenAsset.Parent = Bracket.IsLocal and gethui()
+		ScreenAsset.Parent = gethui()
 
 		return ScreenAsset
 	end,
