@@ -2,9 +2,9 @@ local UserInputService = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
 local TextService = game:GetService("TextService")
 local GuiService = game:GetService("GuiService")
-local RunService = game:GetService("RunService")
-local PlayerService = game:GetService("Players")
-local CoreGui = game:GetService("CoreGui")
+local RunService = cloneref(game:GetService("RunService"))
+local PlayerService = cloneref(game:GetService("Players"))
+local CoreGui = cloneref(game:GetService("CoreGui"))
 
 local GuiInset = GuiService:GetGuiInset()
 local LocalPlayer = PlayerService.LocalPlayer
@@ -2306,7 +2306,7 @@ Bracket.Elements = {
 
 		if not Bracket.IsLocal then sethiddenproperty(ScreenAsset, "OnTopOfCoreBlur", true) end
 		ScreenAsset.Name = "Bracket " .. game:GetService("HttpService"):GenerateGUID(false)
-		ScreenAsset.Parent = Bracket.IsLocal and LocalPlayer:FindFirstChildOfClass("PlayerGui") or CoreGui
+		ScreenAsset.Parent = Bracket.IsLocal and LocalPlayer:FindFirstChildOfClass("PlayerGui") or gethui()
 
 		return ScreenAsset
 	end,
